@@ -23,7 +23,7 @@ m0wer/tiddlywiki | test       | ?
 ## Quickstart
 
 ```bash
-docker run -d -p 8080:8080 m0wer/tiddlywiki
+docker run -d -p 8080:8080 songtianlun/tw5-node
 ```
 
 Now TiddlyWiki should be running on
@@ -35,7 +35,7 @@ The container uses a Docker volume to save the wiki data. In order not
 to lose sight of that, I recommend using a local directory for the volume.
 
 ```bash
-docker run -d -p 8080:8080 -v $(pwd)/.tiddlywiki:/var/lib/tiddlywiki m0wer/tiddlywiki
+docker run -d -p 8080:8080 -v $(pwd)/.tiddlywiki:/var/lib/tiddlywiki songtianlun/tw5-node
 ```
 
 In this example, the folder `$(pwd)/.tiddlywiki` is used for the data.
@@ -89,7 +89,7 @@ Create `docker-compose.yml` with the following contents:
 version: '3'
 services:
   tiddlywiki:
-    image: m0wer/tiddlywiki
+    image: songtianlun/tw5-node
     volumes:
       - ./tiddlywiki:/var/lib/tiddlywiki
     restart: unless-stopped
